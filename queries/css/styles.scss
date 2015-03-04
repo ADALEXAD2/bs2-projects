@@ -1,28 +1,53 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
 body {
-	background-color: blue;
+	background-color: pink;
+}
+
+header {
+	nav {
+		ul {
+			&:before,
+			&:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			li {
+				display: inline-block;
+				float: left;
+				width: 25%;
+			}
+		}
+	}
 }
 
 main {
 	section:first-of-type{
+		background-image: Url("http://www.dota2wallpapers.com/wp-content/uploads/2012/11/DotA-2-Tidehunter-Wallpaper.png");
+		background-size: cover;
+		background-position: center;
 		div:first-child{
 			width: 25%;
-			// float: left;
+			color: white;
+			background-color: hsla(1, 1, 1, .5);
 		}
 		div:last-child{
 			width:75%;
-			// float: left;
 		}
 	}
 	section {
 		div {
 			width: 33.3333%;
 			float: left;
+			padding: 10px;
 		}
 	}
 	section:last-of-type{
 		div {
 			width: 50%;
-			// float: left;
 		}
 	}
 	section:before, section:after {
@@ -43,7 +68,29 @@ main {
 }
 
 @media screen and (max-width: 500px){
-	body {
-		background-color: green;
+	header {
+		nav {
+			ul {
+				li {
+					display: block;
+					width: 100%;
+					text-align: center;
+					padding: 10px 0;
+				}
+			}
+		}
 	}
+
+	section {
+		div {
+			width: 100%;
+		}
+	}
+
+	.no-phone {
+		display: none;
+	}
+
+
+
 }
